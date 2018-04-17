@@ -1,149 +1,139 @@
-<!DOCTYPE html>
-<html lang="en" >
+﻿<!DOCTYPE html >
+<!--
+파일명 : index.html
+작성자 :최은혜
+설명 : 마우스 휠 plugin을 사용하여 스크롤되는 웹페이지
+-->
 
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Choi Eun Hye</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Choi eun hye - 1 </title>
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/litera/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css'>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/barGraph.css">
-
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/prefixfree.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
 </head>
-
 <body>
 
-  <div class="ct" id="t1">
- <div class="ct" id="t2">
-   <div class="ct" id="t3">
-<section>
- <ul>
-   <a href="#t1"><li class="icon fa fa-home" id="uno"></li></a>
-   <a href="#t2"><li class="icon fa fa-keyboard-o" id="dos"></li></a>
-   <a href="#t3"><li class="icon fa fa-folder-open" id="tres"></li></a>
- </ul>
+<!-- 주 메뉴 -->
+<ul id="menu">
+	<li class="on"> <a href="#"> <i class="fa fa-circle"></i> </a> </li>
+	<li> <a href="#"> <i class="fa fa-circle"></i></a> </li>
+	<li> <a href="#"> <i class="fa fa-circle"></i></a> </li>
+	<li> <a href="#"> <i class="fa fa-circle"></i></a> </li>
+</ul>
 
-<!-- page 1 : 메인 -->
-  <div class="page" id="p1">
-     <video src="video/clouds.mp4" autoplay poster="img/sky.jpg"></video>
-     <li class="icon fa fa-angellist"><span class="title">Choi Eun Hye</span>
-       <span class="hint">Look around my portfolio<br/> thank you!</span></li>
-  </div>
+<!-- sns -->
+<ul id="sns">
+	<li> <a href="#"> <i class="fa fa-facebook"></i> </a> </li>
+	<li> <a href="#"> <i class="fa fa-twitter"></i> </a> </li>
+	<li> <a href="#"><i class="fa fa-envelope" data-toggle="modal" data-target="#email"></i></a>
+	 </li>
+</ul>
 
-<!-- page 2 : 자기소개 -->
-  <div class="page" id="p2">
-    <li class="icon fa fa-coffee">
-      <p><span class="title">오늘도 맑음</span>
-        웹표준과 접근성을 기반으로, 사용자가 만족할 수 있는 UI/UX를 목표로 합니다.
-        또한 항상 주위와 소통하고 더 나은 결과물을 위해 자기 개발을 게을리 하지않고
-        작업하고 있습니다 ^^
-      </p>
-    </li>
+<!-- 모달 -->
+<div class="modal fade" id="email" role="dialog">
+	<div class="modal-dialog">
 
-    <div class="graphFid">
-      <div class="barGraph">
-        <h3>컴퓨터그래픽스과를 전공으로 웹용 이미지 제작 및 온라인 페이지 내에서의 간단한 퍼블리싱 작업까지 가능합니다!</h3>
-      <ul class="graph">
-        <span class="graph-barBack">
-          <li class="graph-bar" data-value="90">
-            <span class="graph-legend">Photoshop&Illustrator</span>
-          </li>
-        </span>
+		<!-- 모달 내용-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Contact US</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
 
-        <span class="graph-barBack">
-          <li class="graph-bar" data-value="85">
-            <span class="graph-legend">Html&CSS</span>
-          </li>
-        </span>
-
-        <span class="graph-barBack">
-          <li class="graph-bar" data-value="75">
-            <span class="graph-legend">Javascript</span>
-          </li>
-        </span>
-
-        <span class="graph-barBack">
-          <li class="graph-bar" data-value="80">
-            <span class="graph-legend">Jquery</span>
-          </li>
-        </span>
-
-      </ul>
+			</div>
+			<div class="modal-body">
+				<form>
+  <fieldset>
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="email@example.com">
       </div>
     </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleTextarea">Email Content</label>
+      <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Input Description "></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputFile">File input</label>
+      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+
+    </div>
+  </fieldset>
+</form>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary" data-dismiss="modal">Send</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- 전체 페이지 -->
+<div id="wrap">
+
+	<!-- 첫 번째 박스 -->
+		<section>
+			<article>
+				<p>Spring</p>
+			</article>
+			<img class="p11" src="img/obj11.png" alt="첫번째 박스">
+			<img class="p12" src="img/obj12.png" alt="첫번째 박스">
+			<img class="p13" src="img/obj13.png" alt="첫번째 박스">
+		</section>
+
+	<!-- 두 번째 박스 -->
+	<section>
+		<article>
+			<p>Summer</p>
+		</article>
+		<img class="p21" src="img/obj21.png" alt="두번째 박스">
+		<img class="p22" src="img/obj22.png" alt="두번째 박스">
+	</section>
+
+	<!-- 세 번째 박스 -->
+	<section>
+		<article>
+			<p>Autumn</p>
+		</article>
+		<img class="p31" src="img/obj31.png" alt="세번째 박스">
+		<img class="p32" src="img/obj32.png" alt="세번째 박스">
+		<img class="p33" src="img/obj33.png" alt="세번째 박스">
+	</section>
+
+	<!-- 네 번째 박스 -->
+	<section>
+		<article>
+			<p>Winter</p>
+		</article>
+		<img class="p41" src="img/obj41.png" alt="네번째 박스">
+		<img class="p42" src="img/obj42.png" alt="네번째 박스">
+	</section>
+
+</div>
 
 
 
-  </div>
 
-
-<!-- page 3 : 프로젝트 링크 -->
-  <div class="page" id="p3">
-   <div class="total">
-     <div class="con con1" style="background: url('img/team2_po.jpg'); background-size:contain;">
-        <div class="des">
-          <p>Team site
-            <a href="http://www.dabipyeung.com/hmedia/team_02/" target="_blank"><i class="fa fa-link"></a></i>
-          </p>
-        </div>
-     </div><!--/con1 -->
-
-     <div class="con con2" style="background: url('img/team2_web.jpg'); background-size:cover;">
-       <div class="des">
-         <p>PAI
-           <a href="http://www.dabipyeung.com/pai/" target="_blank"><i class="fa fa-link"></i></a>
-         </p>
-       </div>
-     </div><!--/con2 -->
-
-     <div class="con con3">
-       <div class="des">
-         <p>portfolio
-           <a href="#" target="_blank"><i class="fa fa-link"></a></i>
-         </p>
-       </div>
-     </div><!--/con3 -->
-
-     <div class="con con4">
-       <div class="des">
-         <p>portfolio
-           <a href="#" target="_blank"><i class="fa fa-link"></a></i>
-         </p>
-       </div>
-     </div><!--/con4 -->
-
-     <div class="con con5">
-       <div class="des">
-         <p>portfolio
-           <a href="#" target="_blank"><i class="fa fa-link"></a></i>
-         </p>
-       </div>
-     </div><!--/con5 -->
-
-     <div class="con con6">
-       <div class="des">
-         <p>portfolio
-           <a href="#" target="_blank"><i class="fa fa-link"></a></i>
-         </p>
-       </div>
-     </div><!--/con6 -->
-
-   </div>
-
- </div><!-- / page 3 : 프로젝트 링크 -->
-</section>
-
-     </div>
-     </div>
-   </div>
-  </div>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script type="text/javascript" src="js/barGraph.js"></script>
 </body>
-
 </html>

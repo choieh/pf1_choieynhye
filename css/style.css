@@ -1,240 +1,88 @@
-@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+@charset "utf-8";
 
-* {
-  transition: all 500ms ease-out;
-  -webkit-transition: all 500ms ease-out;
-}
-
-html, body, section, .page {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  transition: all 1s cubic-bezier(.5, -0.005, 0.2, 1) !important;
-  -webkit-transition: all 1s cubic-bezier(.5, -0.005, 0.2, 1) !important;
-  color: #000;
-  background: #fff;
-  overflow: hidden;
-}
-
-section {
-  width:300%;
-}
-
-.page {
-  position: absolute;
-}
-
-#p1 {
-  left: 0;
-}
-
-#p2 {
-  left: 100%;
-  background: #fff;
-}
-
-#p3 {
-  left: 200%;
-    background: #fff;
-    overflow: scroll;
-}
-
-ul {
- position: fixed;
- z-index: 1;
-}
-#t1:target .page#p1 {
-    transform: translateX(0);
-}
-#t2:target .page#p2 {
-    transform: translateX(-90%);
-}
-#t3:target .page#p3 {
-    transform: translateX(-190%);
-}
-
-
-#t2:target .page#p1,
-#t3:target .page#p1, {
-  background: black;
-}
-
-#t2:target .page#p1 .icon,
-#t3:target .page#p1 .icon, {
-  -webkit-filter: blur(3px);
-  filter: blur(3px);
-}
-
-.icon {
-  color: #000;
-  font-size: 32px;
-  display: block;
-}
-
-ul .icon:hover {
-  opacity: 0.6;
-}
-
-#p1 .icon .title {
-  margin-bottom: 20px;
-}
-
-#t2:target ul .icon,
-#t3:target ul .icon, {
-  transform: scale(.6);
-  transition-delay: .25s;
-}
-
-#t2:target #dos {
-  transform: scale(1.2) !important;
-}
-
-#t3:target #tres {
-  transform: scale(1.2) !important;
-}
-
-
-ul {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  /*right: 0;*/
-  margin: auto;
-  height: 280px;
-  width: 10%;
-  padding: 0;
-  text-align: center;
- }
-
-ul li {
-  margin: 30px 0;
-}
-
-a {
-  text-decoration: none;
-  font-family: open sans, sans-serif;
-}
-
-.title, .hint {
-  font-family: open sans, sans-serif;
-  display: block;
-}
-
-.title {
-  font-size: 38px;
-  font-family: 'Black Han Sans', sans-serif;
-}
-
-.hint {
-  font-size: 13px;
-}
-
-.hint a {
-  color: #EFFF06;
-  transition: all 250ms easet-out;
-}
-
-.hint a:hover {
-  color: #FFF;
-}
-
-.page .icon {
-  position: absolute;
-  top: 200px;
-  bottom: 0;
-  right: 10%;
-  left: 0;
-  width: 1000px;
-  height: 170px;
-  margin: auto;
-  text-align: center;
-  font-size: 80px;
-  transform: translateX(360%);
-  line-height: 1.3;
-}
-.page p{
-  font-size: 0.3em;
-  width: 1000px;
-  height: 300px;
-}
-
-.page#p1 .icon {
-  height: 220px;
-}
-
-.page#p1 .icon {
-  transform: translateX(0) !important;
-}
-
-#t2:target .page#p2 .icon {
-  transform: translateX(0) !important;
-  transition-delay: 1s;
-}
-
-#t3:target .page#p3 .icon {
-  transform: translateX(0) !important;
-  transition-delay: 1s;
-}
+/*
+파일명 : style.css
+작성자 :최은혜
+설명 : 마우스 휠 plugin을 사용하여 스크롤되는 웹페이지
+ */
+@import url(http://fonts.googleapis.com/css?family=Righteous);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 
 
-/* portfolio */
-.total{
-  width: 90%;
-  height: 100%;
-  background: #fff;
-  margin-right: 0.1rem;
-}
 
-.con{
-  width: 30%;
-  height: 30%;
-  float: left;
-  margin: 1.5rem;
-  background: #aaa;
-}
-.con:hover{
-  box-shadow: 5px 10px 8px #888888;
-}
-.des{
-  width: 100%;
-  height: 30%;
-  background: #111;
-  margin-top: 38%;
-  opacity: 0.85;
-}
-.des>p{
-  color: #ddd;
-  font-size: 1.5em;
-  margin-left: 60%;
-  padding-top: 5%;
-}
-.des>p>a{
-  color: #ddd;
-  text-decoration: none;
-}
+/*  Reset CSS  */
+* { margin:0;  padding:0;}
+ol,ul { list-style: none; }
+a { outline:0; text-decoration:none; color:#555; }
+img { border:0;}
+body { font:12px/1.6 arial; color:#555; }
 
-/* .con1{
+/*sns*/
+#sns{position: fixed; top: 40px; right: 50px; z-index: 14;}
+#sns li{float: left; margin-left: 26px;}
+#sns li i{font-size: 25px; color: #111; opacity: 0.5; transition: all 0.5s;}
+#sns li i:hover{transform: scale(1.5); opacity: 1;}
 
-}
-.con2{
 
-}
-.con3{
-  background: #333;
-}
-.con4{
-  background: #444;
-}
-.con5{
-  background: #555;
-}
-.con6{
-  background: #555;
-} */
+/*메뉴*/
+#menu{position: fixed; top: 50%; right: 0; margin-top: -100px; z-index: 13;}
+#menu a{display: block; width: 50px; height: 60px; font-family: Righteous; font-size: 14px; color: #111;
+text-align: center; overflow: hidden; box-sizing: border-box; opacity: 0.8; transition: all 0.3;}
+#menu li:hover a{font-size: 24px; opacity: 1;}
+#menu li.on a{font-size: 24px; opacity: 1;}
 
+#menu li:nth-child(1):hover a{color: #fff; border-color: #fff;}
+#menu li:nth-child(2):hover a{color: #fff; border-color: #fff;}
+#menu li:nth-child(3):hover a{color: #fff; border-color: #fff;}
+#menu li:nth-child(4):hover a{color: #fff; border-color: #fff;}
+
+#menu li:nth-child(1).on a{color: #fff; border-color: #fff;}
+#menu li:nth-child(2).on a{color: #fff; border-color: #fff;}
+#menu li:nth-child(3).on a{color: #fff; border-color: #fff;}
+#menu li:nth-child(4).on a{color: #fff; border-color: #fff;}
+
+
+
+/*레이아웃*/
+section{width: 100%; height: 700px; position: relative; background-size: cover;
+background-position: right center; background-attachment: fixed; overflow: hidden;}
+section:nth-child(1){background-image: url(../img/bg12.jpg);}
+section:nth-child(2){background-image: url(../img/bg21.jpg);}
+section:nth-child(3){background-image: url(../img/bg31.jpg);}
+section:nth-child(4){background-image: url(../img/bg41.jpg);}
+
+
+/*텍스트 박스*/
+article{position: absolute; top: 46%; left:40%; z-index: 11;}
+article p{font-family: Righteous; font-size: 100px; letter-spacing: 2px; line-height: 1;
+text-shadow: 3px 3px 20px #222;}
+/* article span{font-size: 16px; display: block; width: 300px;} */
+section:nth-child(1) p{color: #ff9da2;}
+section:nth-child(2) p{color: #6fd8de;}
+section:nth-child(3) p{color: #ecd32c;}
+section:nth-child(4) p{color: #e4d1c0;}
+/* section:nth-child(4) p{color: #005a89;} */
+
+
+
+/*첫 번째 박스 이미지*/
+.p11{position: absolute; bottom: 20px; right: 20px;}
+.p12{position: absolute; bottom: -40px; right: 130px;}
+.p13{position: absolute; top:180px; right: 60px;}
+
+/*두 번째 박스 이미지*/
+.p21{position: absolute; bottom: -480px; right: -180px;}
+.p22{position: absolute; bottom: -40px; right: 130px;}
+
+/*세 번째 박스 이미지 */
+.p31{position: absolute; bottom: 30px; right: 180px;}
+.p32{position: absolute; bottom: -270px; right: 110px;}
+.p33{position: absolute; bottom: -130px; right: -70px;}
+
+/*네 번째 박스 이미지 */
+.p41{position: absolute; bottom: -120px; right: 20px;}
+.p42{position: absolute; bottom: -180px; right: 0px;}
 
 
 
